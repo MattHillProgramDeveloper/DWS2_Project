@@ -5,36 +5,33 @@ let search = document.querySelector('#moviesearch')
 
 
 function searchMovies(searched) {
-if(searched === ""){
-    alert("Please enter a movie title")
-}
-else{
-    // Create an AJAX or Fetch request that writes
-// data to the #results section
-let xhr = new XMLHttpRequest();
-
-xhr.open('GET', 'https://api.themoviedb.org/3/search/movie?api_key=49f13a7ad6ac356132022f211dd3de03&language=en-US&query='+searched+'&page=1&include_adult=false', true);
-xhr.send(null);
-//onload  fires once the server has responded to the request
-xhr.onload = function () {
-    if (xhr.status === 200) {
-        console.log("we see the server");
-        let responseObject = JSON.parse(xhr.responseText);
-        console.log(responseObject);
-        if(responseObject.total_results === 0){
-            alert("OMG There is nothing!")
-        }
-        else{
-            buildMovies(responseObject.results,searched);
-        }
-        
-
+    if(searched === ""){
+        alert("Please enter a movie title")
     }
-};
-}
+    else{
+        // Create an AJAX or Fetch request that writes
+    // data to the #results section
+    let xhr = new XMLHttpRequest();
 
+    xhr.open('GET', 'https://api.themoviedb.org/3/search/movie?api_key=49f13a7ad6ac356132022f211dd3de03&language=en-US&query='+searched+'&page=1&include_adult=false', true);
+    xhr.send(null);
+    //onload  fires once the server has responded to the request
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                console.log("we see the server");
+                let responseObject = JSON.parse(xhr.responseText);
+                console.log(responseObject);
+                if(responseObject.total_results === 0){
+                    alert("OMG There is nothing!")
+                }
+                else{
+                    buildMovies(responseObject.results,searched);
+                }
+                
 
-
+            }
+        };
+    }
 
 }
 
