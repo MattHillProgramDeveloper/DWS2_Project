@@ -1,0 +1,25 @@
+{
+  "name": "dws2_project",
+  "version": "1.0.0",
+  "description": "gulp scss project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MattHillProgramDeveloper/DWS2_Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MattHillProgramDeveloper/DWS2_Project/issues"
+  },
+  "homepage": "https://github.com/MattHillProgramDeveloper/DWS2_Project#readme",
+  "devDependencies": {
+    "browser-sync": "^2.24.5",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1"
+  },
+  "dependencies": {}
+}
