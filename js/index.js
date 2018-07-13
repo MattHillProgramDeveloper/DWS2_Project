@@ -1,16 +1,17 @@
 let imagePrefix='https://image.tmdb.org/t/p/original/';
 //noting the search input field for later
-let searchInput = document.querySelector('#search');
+let search = document.querySelector('#moviesearch')
 
 
 
-function searchMovies() {
-
-// Create an AJAX or Fetch request that writes
+function searchMovies(searched) {
+if(searched === ""){
+    alert("Please enter a movie title")
+}
+else{
+    // Create an AJAX or Fetch request that writes
 // data to the #results section
-var xhr = new XMLHttpRequest();
-var searched = document.querySelector('#moviesearch').value;
-alert(searched);
+let xhr = new XMLHttpRequest();
 
 xhr.open('GET', 'https://api.themoviedb.org/3/search/movie?api_key=49f13a7ad6ac356132022f211dd3de03&language=en-US&query='+searched+'&page=1&include_adult=false', true);
 xhr.send(null);
@@ -20,23 +21,38 @@ xhr.onload = function () {
         console.log("we see the server");
         let responseObject = JSON.parse(xhr.responseText);
         console.log(responseObject);
-        buildUiPeople(responseObject.results,searched);
+        if(responseObject.total_results === 0){
+            alert("OMG There is nothing!")
+        }
+        else{
+            buildMovies(responseObject.results,searched);
+        }
+        
 
     }
 };
+}
+
+
+
 
 }
 
-function buildUiPeople(responseObject,searched) {
+function buildMovies(responseObject,searched) {
 
     //Declare a variable to store the content
     let movieContent = '<aside><h1>Results for '+searched+'</h1></aside>';
         
     //begin a loop to start adding in new people content
-    for (var i = 0; i < responseObject.length; i++) {
-        //Declare all needed variables and fill them from the json object
-        let imageURL = imagePrefix +responseObject[i].poster_path;
-        let title =   responseObject[i].title;
+    for (let i = 0; i < responseObject.length; i++) {
+        //Declare a default image if a movie poster does not exist
+        let imageURL = 'img/missing.jpg';
+        //change the image to the actual poster if it does exist
+        if(responseObject[i].poster_path){
+            imageURL = imagePrefix +responseObject[i].poster_path;
+        }
+        
+let title =   responseObject[i].title;
         movieContent += '<figure class="item">';
         movieContent += '<img src=' + imageURL + ' alt="Poster for '+title+'"/>';
         movieContent += '<figcaption>' + title + '</figcaption>';
@@ -49,9 +65,11 @@ function buildUiPeople(responseObject,searched) {
 
 }
 
-searchInput.addEventListener('keyup',function(e){
+search.addEventListener('keyup',function(e){
     if (e.keyCode === 13) {
-    searchMovies();
+    searchMovies(search.value);
   }
 });
 
+
+searchMovies('Fight Club');

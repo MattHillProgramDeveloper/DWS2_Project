@@ -59,7 +59,14 @@ header {
 
 footer {
   background-color: #333333;
-  color: #EEEEEE; }
+  color: #EEEEEE;
+  padding: 10px;
+  margin: 0px; }
+  footer p {
+    padding: 0;
+    margin: 0; }
+  footer img {
+    display: inline; }
 
 #results {
   display: flex;
