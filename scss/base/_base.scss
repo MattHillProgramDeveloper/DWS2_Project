@@ -1,0 +1,95 @@
+$fontorange: orange;
+$fontgrey: #DDDDDD;
+$backgroundgrey: #333333;
+
+html{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+header{
+  background: url("../img/lloyd-dirks-74271-unsplash.jpg") no-repeat left bottom;
+  background-size: cover;
+  height: 300px;
+
+  img{
+    margin-top: 15px;
+    margin-left:40px;
+  }
+  nav{
+
+    margin-top: 15px;
+    float: right;
+
+    ul{
+    margin-right: 40px;
+
+      li{
+        display: inline;
+        margin-left: 10px;
+        padding-right: 10px;
+      }
+    }
+
+    a{
+      color: $fontgrey;
+      font-size: 16px;
+      text-decoration: none;
+      
+      &:hover, &.active{
+        color: orange;
+      }
+
+    }
+  }
+
+}
+
+#logo{
+  display: inline;
+  color: $fontgrey;
+  font-size: 30px;
+}
+
+
+#search{
+
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top: 75px;
+  
+  p{
+    color: $fontgrey;
+    font-size: 16px;
+    padding: 5px;
+    margin: 0;
+    background-color: $backgroundgrey;
+    width: 245px;
+  }
+
+  input{
+    border: none;
+    padding: 0;
+    margin: 0;
+    background-color: lightgrey;
+    font-size: 24px;
+    width: 100%;
+  }
+
+}
+
+#moviesearch{
+  background: url("../img/search.png") no-repeat right bottom;
+}
+
+
+footer{
+  @extend %center-text;
+  background-color: $backgroundgrey;
+  color: #EEEEEE;
+}
+
+
+
+
+

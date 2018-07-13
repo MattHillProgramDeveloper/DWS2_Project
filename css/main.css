@@ -1,2 +1,82 @@
-p {
-  color: blue; }
+footer {
+  text-align: center; }
+
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+header {
+  background: url("../img/lloyd-dirks-74271-unsplash.jpg") no-repeat left bottom;
+  background-size: cover;
+  height: 300px; }
+  header img {
+    margin-top: 15px;
+    margin-left: 40px; }
+  header nav {
+    margin-top: 15px;
+    float: right; }
+    header nav ul {
+      margin-right: 40px; }
+      header nav ul li {
+        display: inline;
+        margin-left: 10px;
+        padding-right: 10px; }
+    header nav a {
+      color: #DDDDDD;
+      font-size: 16px;
+      text-decoration: none; }
+      header nav a:hover, header nav a.active {
+        color: orange; }
+
+#logo {
+  display: inline;
+  color: #DDDDDD;
+  font-size: 30px; }
+
+#search {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top: 75px; }
+  #search p {
+    color: #DDDDDD;
+    font-size: 16px;
+    padding: 5px;
+    margin: 0;
+    background-color: #333333;
+    width: 245px; }
+  #search input {
+    border: none;
+    padding: 0;
+    margin: 0;
+    background-color: lightgrey;
+    font-size: 24px;
+    width: 100%; }
+
+#moviesearch {
+  background: url("../img/search.png") no-repeat right bottom; }
+
+footer {
+  background-color: #333333;
+  color: #EEEEEE; }
+
+.button {
+  padding: 0.5em 1em;
+  font-size: 1.5em;
+  background-color: #4990e2;
+  color: #fff;
+  border: none;
+  display: inline-block;
+  margin: 0 auto;
+  transition: border-radius 0.5s, background-color 0.5s;
+  border-top-left-radius: 0;
+  border-top-right-radius: 1em;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 1em; }
+  .button:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: #f6a623;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 0; }

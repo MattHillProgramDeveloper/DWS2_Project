@@ -1,5 +1,13 @@
-$primary-color: blue;
+//Utilities
+@import 'utils/vars';
+@import 'utils/mixins';
+@import 'utils/placeholders';
 
-p{
-    color: $primary-color;
-}
+//Base
+@import 'base/base';
+
+//Components
+@import 'components/buttons';
+
+
+
