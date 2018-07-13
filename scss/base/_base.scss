@@ -95,12 +95,10 @@ footer{
 #results{
   display:flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
 
   figure{
     width:25%;
-    margin: 0 0 20px 0;
-    padding: 1px;
 
 
     img{
