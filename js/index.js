@@ -31,15 +31,15 @@ xhr.onload = function () {
 function buildUiPeople(responseObject) {
 
     //Declare a variable to store the content
-    let peopleContent = '';
-
+    let peopleContent = '<aside><h1>Results for '+searched+'</h1></aside>';
+        
     //begin a loop to start adding in new people content
     for (var i = 0; i < responseObject.length; i++) {
         //Declare all needed variables and fill them from the json object
         let imageURL = imagePrefix +responseObject[i].poster_path;
         let title =   responseObject[i].title;
-        peopleContent += '<figure>';
-        peopleContent += '<img src=' + imageURL + ' alt="Poster for '+title+'" height="50" />';
+        peopleContent += '<figure class="item">';
+        peopleContent += '<img src=' + imageURL + ' alt="Poster for '+title+'"/>';
         peopleContent += '<figcaption>' + title + '</figcaption>';
         peopleContent += '</figure>';
     }
@@ -47,4 +47,8 @@ function buildUiPeople(responseObject) {
     //query for the appropriate .section
     let content = document.querySelector('section#results');
     content.innerHTML = peopleContent;
+
 }
+
+
+
