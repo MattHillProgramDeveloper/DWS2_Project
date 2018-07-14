@@ -1,9 +1,7 @@
-$fontorange: orange;
-$fontgrey: #DDDDDD;
-$backgroundgrey: #333333;
+
 
 html{
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: $fontstack;
 }
 
 header{
@@ -32,12 +30,11 @@ header{
     }
 
     a{
-      color: $fontgrey;
-      font-size: 16px;
+      @include font-color-size($mainlightgrey,16px);
       text-decoration: none;
       
       &:hover, &.active{
-        color: orange;
+        color: $mainorange;
       }
 
     }
@@ -47,8 +44,7 @@ header{
 
 #logo{
   display: inline;
-  color: $fontgrey;
-  font-size: 30px;
+  @include font-color-size($mainlightgrey,30px);
 }
 
 
@@ -60,19 +56,19 @@ header{
   margin-top: 75px;
   
   p{
-    color: $fontgrey;
-    font-size: 16px;
+    @include font-color-size($mainlightgrey,16px);
     border: solid $backgroundgrey 5px;
     margin: 0;
     background-color: $backgroundgrey;
     width: 245px;
+    @extend %center-text;
   }
 
   input{
-    border: solid lightgrey 5px;
+    border: solid $mainlightgrey 5px;
     padding: 5px;
     margin: 0;
-    background-color: lightgrey;
+    background-color: $mainlightgrey;
     font-size: 24px;
     width: 100%;
   }
@@ -89,7 +85,7 @@ header{
 footer{
   @extend %center-text;
   background-color: $backgroundgrey;
-  color: #EEEEEE;
+  @include font-color-size($mainlightgrey,16px);
   padding: 10px;
   margin: 0px;
 
@@ -122,12 +118,10 @@ footer{
     figcaption{
       width:100%;
       @extend %center-text;
-      color: $fontorange;
+      @include font-color-size($mainorange,14px);
       background-color: $backgroundgrey;
       padding:5px 0;
     }
-
-
   }
 
   aside{
@@ -135,17 +129,15 @@ footer{
     margin: 0;
     padding:0;
 
-
-      h1{
-      color: $fontgrey;
-  padding: 0;
-  border: solid $backgroundgrey 5px;
-  margin-left: 38px;
-  background-color: $backgroundgrey;
-    width: 40%;
+    h1{
+      color: $mainlightgrey;
+      padding: 0;
+      border: solid $backgroundgrey 5px;
+      margin-left: 38px;
+      background-color: $backgroundgrey;
+      width: 40%;
+    }
   }
-  }
-
 }
 
 

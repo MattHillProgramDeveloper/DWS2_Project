@@ -1,4 +1,4 @@
-footer, #results figure figcaption {
+#search p, footer, #results figure figcaption {
   text-align: center; }
 
 html {
@@ -46,10 +46,10 @@ header {
     background-color: #333333;
     width: 245px; }
   #search input {
-    border: solid lightgrey 5px;
+    border: solid #DDDDDD 5px;
     padding: 5px;
     margin: 0;
-    background-color: lightgrey;
+    background-color: #DDDDDD;
     font-size: 24px;
     width: 100%; }
 
@@ -59,7 +59,8 @@ header {
 
 footer {
   background-color: #333333;
-  color: #EEEEEE;
+  color: #DDDDDD;
+  font-size: 16px;
   padding: 10px;
   margin: 0px; }
   footer p {
@@ -82,6 +83,7 @@ footer {
     #results figure figcaption {
       width: 100%;
       color: orange;
+      font-size: 14px;
       background-color: #333333;
       padding: 5px 0; }
   #results aside {
@@ -112,7 +114,7 @@ footer {
   .button:hover {
     color: #fff;
     text-decoration: none;
-    background-color: #f6a623;
+    background-color: orange;
     border-top-left-radius: 1em;
     border-top-right-radius: 0;
     border-bottom-left-radius: 1em;

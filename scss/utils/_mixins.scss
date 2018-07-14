@@ -5,9 +5,10 @@
     border-bottom-left-radius: $bottomLeft;
     border-bottom-right-radius: $bottomRight;
 }
+
+
 //mixin for fonts
-@mixin this-font($family, $size, $weight){
-    font-family: $family;
+@mixin font-color-size($thisColor, $size){
+    color: $thisColor;
     font-size: $size;
-    font-weight: $weight;
 }
