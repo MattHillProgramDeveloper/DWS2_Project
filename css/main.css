@@ -1,5 +1,14 @@
-#search p, footer, #results figure figcaption {
+#search p, footer {
   text-align: center; }
+
+#results figure figcaption {
+  margin: 10px;
+  align-self: flex-start; }
+
+body, #results, #results figure, #results aside {
+  margin: 0;
+  border: 0;
+  padding: 0; }
 
 html {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
@@ -23,7 +32,7 @@ header {
         padding-right: 10px; }
     header nav a {
       color: #DDDDDD;
-      font-size: 16px;
+      font-size: 12px;
       text-decoration: none; }
       header nav a:hover, header nav a.active {
         color: orange; }
@@ -36,22 +45,23 @@ header {
 #search {
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 90%;
   margin-top: 75px; }
   #search p {
     color: #DDDDDD;
-    font-size: 16px;
-    border: solid #333333 5px;
+    font-size: 12px;
+    border: solid #333333 3px;
+    padding: 0 5px;
     margin: 0;
     background-color: #333333;
-    width: 245px; }
+    width: 90%; }
   #search input {
     border: solid #DDDDDD 5px;
     padding: 5px;
     margin: 0;
     background-color: #DDDDDD;
     font-size: 24px;
-    width: 100%; }
+    width: 90%; }
 
 #moviesearch {
   background: url("../img/search.png") no-repeat right bottom;
@@ -60,9 +70,9 @@ header {
 footer {
   background-color: #333333;
   color: #DDDDDD;
-  font-size: 16px;
+  font-size: 12px;
   padding: 10px;
-  margin: 0px; }
+  margin: 5px; }
   footer p {
     padding: 0;
     margin: 0; }
@@ -70,33 +80,31 @@ footer {
     display: inline; }
 
 #results {
+  margin: 8px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start; }
   #results figure {
-    width: 25%; }
+    margin: 6px 12px;
+    background-color: #333333;
+    display: flex;
+    align-items: center; }
     #results figure img {
-      display: block;
-      width: 100%;
-      margin-left: auto;
-      margin-right: auto; }
+      width: 25%; }
     #results figure figcaption {
-      width: 100%;
       color: orange;
       font-size: 14px;
-      background-color: #333333;
-      padding: 5px 0; }
+      background-color: #333333; }
   #results aside {
     width: 100%;
-    margin: 0;
-    padding: 0; }
+    margin: 4px 0; }
     #results aside h1 {
       color: #DDDDDD;
-      padding: 0;
+      margin: 0;
       border: solid #333333 5px;
-      margin-left: 38px;
+      padding: 0 0 0 38px;
       background-color: #333333;
-      width: 40%; }
+      width: 90%; }
 
 .button {
   padding: 0.5em 1em;

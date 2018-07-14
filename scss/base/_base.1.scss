@@ -4,10 +4,6 @@ html{
   font-family: $fontstack;
 }
 
-body{
-  @extend %zero-edges;
-}
-
 header{
   background: url("../img/lloyd-dirks-74271-unsplash.jpg") no-repeat left bottom;
   background-size: cover;
@@ -34,7 +30,7 @@ header{
     }
 
     a{
-      @include font-color-size($mainlightgrey,12px);
+      @include font-color-size($mainlightgrey,16px);
       text-decoration: none;
       
       &:hover, &.active{
@@ -56,18 +52,20 @@ header{
 
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
+  width: 50%;
   margin-top: 75px;
   
   p{
-    @include font-color-size($mainlightgrey,12px);
-    border: solid $backgroundgrey 3px;
-    padding: 0 5px;
+    @include font-color-size($mainlightgrey,18px);
+    border: solid $backgroundgrey 5px;
     margin: 0;
     background-color: $backgroundgrey;
-    width: 90%;
+    width: 60%;
     @extend %center-text;
 
+    @media (max-width: 934px){
+      font-size: 16px;
+    }
   }
   input{
     border: solid $mainlightgrey 5px;
@@ -75,7 +73,7 @@ header{
     margin: 0;
     background-color: $mainlightgrey;
     font-size: 24px;
-    width: 90%;
+    width: 100%;
   }
 
 }
@@ -90,9 +88,9 @@ header{
 footer{
   @extend %center-text;
   background-color: $backgroundgrey;
-  @include font-color-size($mainlightgrey,12px);
+  @include font-color-size($mainlightgrey,16px);
   padding: 10px;
-  margin: 5px;
+  margin: 0px;
 
   p{
     padding:0;
@@ -105,46 +103,42 @@ footer{
 }
 
 #results{
-  @extend %zero-edges;
-  margin: 8px 0;
   display:flex;
   flex-wrap: wrap;
   justify-content: flex-start;
 
-
   figure{
-    @extend %zero-edges;
-    margin: 6px 12px;
-    background-color: $backgroundgrey;
-    display: flex;
-    align-items: center;
+    width:25%;
+
 
     img{
-     
-      width: 25%;
+      display: block;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     figcaption{
-      
-      @extend %upperleft;
-      @include font-color-size($mainorange,14px);
+      width:100%;
+      @extend %center-text;
+      @include font-color-size($mainorange,18px);
       background-color: $backgroundgrey;
-
+      padding:5px 0;
     }
   }
 
   aside{
     width:100%;
-    @extend %zero-edges;
-    margin: 4px 0;
+    margin: 0;
+    padding:0;
 
     h1{
       color: $mainlightgrey;
-      margin: 0;
+      padding: 0;
       border: solid $backgroundgrey 5px;
-      padding: 0 0 0 38px;
+      margin-left: 38px;
       background-color: $backgroundgrey;
-      width: 90%;
+      width: 40%;
     }
   }
 }

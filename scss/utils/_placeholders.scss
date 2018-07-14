@@ -2,3 +2,14 @@
 %center-text{
     text-align: center;
   }
+
+%upperleft{
+  margin:10px;
+  align-self: flex-start;
+}
+
+%zero-edges{
+  margin: 0;
+  border :0;
+  padding: 0;
+}
