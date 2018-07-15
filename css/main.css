@@ -141,20 +141,23 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start; }
+  @media (min-width: 612px) {
+    #results {
+      margin-left: 38px; } }
   #results figure {
-    margin: 6px 12px;
+    margin: 6px 23px;
     background-color: #333333;
     display: flex;
     align-items: center; }
     @media (min-width: 612px) {
       #results figure {
         width: 25%;
-        display: block;
-        margin-left: 38px; } }
+        display: block; } }
     #results figure img {
       width: 25%; }
       @media (min-width: 612px) {
         #results figure img {
+          display: block;
           width: 100%;
           margin-left: auto;
           margin-right: auto; } }
@@ -181,13 +184,16 @@ footer {
       @media (min-width: 612px) {
         #results aside h1 {
           width: 40%;
-          margin-left: 38px; } }
+          margin-left: 23px; } }
 
 #more {
   width: 90%;
   margin: 20px auto; }
   #more a {
     width: 90%; }
+  @media (min-width: 612px) {
+    #more {
+      width: 30%; } }
 
 .button {
   padding: 1em;

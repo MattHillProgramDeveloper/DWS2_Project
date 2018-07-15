@@ -193,23 +193,28 @@ footer{
   display:flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  @include mq(large){
+    margin-left: 38px;
+  }
+
 
   figure{
     @extend %zero-edges;
-    margin: 6px 12px;
+    margin: 6px 23px;
     background-color: $backgroundgrey;
     display: flex;
     align-items: center;
     @include mq(large){
       width:25%;
       display: block;
-      margin-left: 38px;
+      
     }
 
 
     img{
       width: 25%;
       @include mq(large){
+        display: block;
         width:100%;
         margin-left: auto;
         margin-right: auto;
@@ -224,6 +229,9 @@ footer{
 
       @include mq(medium){
         font-size: $medfont;
+      }
+      @include mq(large){
+
       }
     }
   }
@@ -244,7 +252,7 @@ footer{
       width: 100%;
       @include mq(large){
         width:40%;
-        margin-left: 38px;
+        margin-left: 23px;
       }
     }
   }
@@ -256,6 +264,9 @@ footer{
   a{
     width: 90%;
     @extend %center-text;
+  }
+  @include mq(large){
+    width: 30%;
   }
 }
 
