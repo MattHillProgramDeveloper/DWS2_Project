@@ -6,6 +6,7 @@ let elHamburger = document.querySelector('#hamburger');
 let elMenuX = document.querySelector('#close');
 let elLilMenu = document.querySelector('#lilmenu');
 let elLogo = document.querySelector('#logo');
+let history = localStorage.getItem('lastSearched');
 
 
 
@@ -31,6 +32,8 @@ function searchMovies(searched) {
                 }
                 else {
                     buildMovies(responseObject.results, searched);
+                    //since we have a valid search we are going to save this to the users local storage
+                    localStorage.setItem('lastSearched', searched);
                 }
 
 
@@ -110,5 +113,22 @@ function closeMobileMenu(){
 
 }
 
-//Just to put something interesting on the page when it loads
-searchMovies('Fight Club');
+
+//Keeping previous searces in local storage
+
+
+
+
+//Put something interesting on the page when it loads
+//If local storage has a search history for this we will load that
+//otherwise we will load a search for Fight Club
+
+if(history){
+    searchMovies(history);
+    elSearchInput.value= history;
+}
+else{
+
+    searchMovies('Fight Club');
+    localStorage.removeItem('lastSearched');
+}
