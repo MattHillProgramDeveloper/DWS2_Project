@@ -1,5 +1,7 @@
 
 
+
+
 html{
   font-family: $fontstack;
 }
@@ -11,44 +13,108 @@ body{
 header{
   background: url("../img/lloyd-dirks-74271-unsplash.jpg") no-repeat left bottom;
   background-size: cover;
-  height: 300px;
-
-  img{
-    margin-top: 15px;
-    margin-left:40px;
+  height: 150px;
+  @include mq(large){
+    height: 200px;
   }
-  nav{
 
-    margin-top: 5px;
-    float: right;
+  p{
+    float: left;
+  }
 
-    ul{
-    margin-right: 40px;
+  #logo{
+    display: inline;
+    @include font-color-size($mainlightgrey,30px);
+    margin: 20px 0 10px 20px;
 
-      li{
-        font-size: 24px;
-        display: inline;
-        margin-left: 10px;
-        padding-right: 10px;
-      }
+    img{
+      @extend %zero-edges;
     }
 
-    a{
-      @include font-color-size($mainlightgrey,12px);
-      text-decoration: none;
-      
-      &:hover, &.active{
-        color: $mainorange;
-      }
-
-    }
   }
 
 }
 
-#logo{
-  display: inline;
-  @include font-color-size($mainlightgrey,30px);
+
+#bignav{
+
+  display:none;
+  @include mq(large){
+    display:block;
+  }
+
+  margin-top: 5px;
+  float: right;
+
+  ul{
+  margin: 30px 40px 0 0;
+
+    li{
+      
+      display: inline;
+      margin-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  a{
+    @include font-color-size($mainlightgrey,$medfont);
+    text-decoration: none;
+    &:hover, &.active{
+      color: $mainorange;
+    }
+  }
+}
+
+#close{
+  display: none;
+}
+
+#hamburger{
+  margin: 20px 20px 0 20px;
+}
+
+
+#lilnav{
+  
+  overflow: auto;
+  display:block;
+  @include mq(large){
+    display:none
+  }
+  img{
+    float: right;
+  }
+
+}
+
+#lilmenu{
+  padding: 20px;
+  width: 100%;
+  overflow: auto;
+  display: none;
+  @extend %zero-edges;
+  background-color: $backgroundgrey;
+
+  a{
+    @include font-color-size($mainlightgrey,$largefont);
+
+    text-decoration: none;
+
+    &:hover, &.active{
+      color: $mainorange;
+    }
+  }
+
+
+
+  li{
+    float: right;
+    clear: right;
+    display: block;
+    margin-right: 40px;
+  }
+
 }
 
 
@@ -57,27 +123,37 @@ header{
   margin-left: auto;
   margin-right: auto;
   width: 90%;
-  margin-top: 75px;
-  
+  @include mq(large){
+    width: 60%;
+  }
   p{
-    @include font-color-size($mainlightgrey,12px);
+    @include font-color-size($mainlightgrey,$smallfont);
     border: solid $backgroundgrey 3px;
-    padding: 0 5px;
+    padding: 0 7px;
     margin: 0;
     background-color: $backgroundgrey;
     width: 90%;
     @extend %center-text;
-
+    @include mq(large){
+      width: 60%;
+      float: left;
+      clear: left;
+    }
   }
+
   input{
+    float: left;
+    clear: left;
     border: solid $mainlightgrey 5px;
     padding: 5px;
     margin: 0;
     background-color: $mainlightgrey;
-    font-size: 24px;
+    font-size: 18px;
     width: 90%;
+    @include mq(large){
+      font-size: 24px;
+    }
   }
-
 }
 
 #moviesearch{
@@ -90,9 +166,16 @@ header{
 footer{
   @extend %center-text;
   background-color: $backgroundgrey;
-  @include font-color-size($mainlightgrey,12px);
+  @include font-color-size($mainlightgrey,$smallfont);
   padding: 10px;
   margin: 10px 5px;
+  @include mq(medium){
+    font-size: $medfont;
+  }
+  @include mq(large){
+    font-size: $largefont;
+  }
+
 
   p{
     padding:0;
@@ -106,11 +189,10 @@ footer{
 
 #results{
   @extend %zero-edges;
-  margin: 8px 0;
+  margin: 8px auto;
   display:flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-
 
   figure{
     @extend %zero-edges;
@@ -118,10 +200,20 @@ footer{
     background-color: $backgroundgrey;
     display: flex;
     align-items: center;
+    @include mq(large){
+      width:25%;
+      display: block;
+      margin-left: 38px;
+    }
+
 
     img{
-     
       width: 25%;
+      @include mq(large){
+        width:100%;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
 
     figcaption{
@@ -130,6 +222,9 @@ footer{
       @include font-color-size($mainorange,14px);
       background-color: $backgroundgrey;
 
+      @include mq(medium){
+        font-size: $medfont;
+      }
     }
   }
 
@@ -137,14 +232,20 @@ footer{
     width:100%;
     @extend %zero-edges;
     margin: 4px 0;
-
+    @include mq(large){
+      font-size: $largefont;
+    }
     h1{
       color: $mainlightgrey;
       margin: 0;
       border: solid $backgroundgrey 5px;
-      padding: 0 0 0 38px;
+      padding: 0 0 0 7px;
       background-color: $backgroundgrey;
-      width: 90%;
+      width: 100%;
+      @include mq(large){
+        width:40%;
+        margin-left: 38px;
+      }
     }
   }
 }

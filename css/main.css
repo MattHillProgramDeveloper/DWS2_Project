@@ -5,7 +5,7 @@
   margin: 10px;
   align-self: flex-start; }
 
-body, #results, #results figure, #results aside {
+body, header #logo img, #lilmenu, #results, #results figure, #results aside {
   margin: 0;
   border: 0;
   padding: 0; }
@@ -16,52 +16,103 @@ html {
 header {
   background: url("../img/lloyd-dirks-74271-unsplash.jpg") no-repeat left bottom;
   background-size: cover;
-  height: 300px; }
-  header img {
-    margin-top: 15px;
-    margin-left: 40px; }
-  header nav {
-    margin-top: 5px;
-    float: right; }
-    header nav ul {
-      margin-right: 40px; }
-      header nav ul li {
-        font-size: 24px;
-        display: inline;
-        margin-left: 10px;
-        padding-right: 10px; }
-    header nav a {
-      color: #DDDDDD;
-      font-size: 12px;
-      text-decoration: none; }
-      header nav a:hover, header nav a.active {
-        color: orange; }
+  height: 150px; }
+  @media (min-width: 612px) {
+    header {
+      height: 200px; } }
+  header p {
+    float: left; }
+  header #logo {
+    display: inline;
+    color: #DDDDDD;
+    font-size: 30px;
+    margin: 20px 0 10px 20px; }
 
-#logo {
-  display: inline;
-  color: #DDDDDD;
-  font-size: 30px; }
+#bignav {
+  display: none;
+  margin-top: 5px;
+  float: right; }
+  @media (min-width: 612px) {
+    #bignav {
+      display: block; } }
+  #bignav ul {
+    margin: 30px 40px 0 0; }
+    #bignav ul li {
+      display: inline;
+      margin-left: 10px;
+      padding-right: 10px; }
+  #bignav a {
+    color: #DDDDDD;
+    font-size: 16px;
+    text-decoration: none; }
+    #bignav a:hover, #bignav a.active {
+      color: orange; }
+
+#close {
+  display: none; }
+
+#hamburger {
+  margin: 20px 20px 0 20px; }
+
+#lilnav {
+  overflow: auto;
+  display: block; }
+  @media (min-width: 612px) {
+    #lilnav {
+      display: none; } }
+  #lilnav img {
+    float: right; }
+
+#lilmenu {
+  padding: 20px;
+  width: 100%;
+  overflow: auto;
+  display: none;
+  background-color: #333333; }
+  #lilmenu a {
+    color: #DDDDDD;
+    font-size: 20px;
+    text-decoration: none; }
+    #lilmenu a:hover, #lilmenu a.active {
+      color: orange; }
+  #lilmenu li {
+    float: right;
+    clear: right;
+    display: block;
+    margin-right: 40px; }
 
 #search {
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
-  margin-top: 75px; }
+  width: 90%; }
+  @media (min-width: 612px) {
+    #search {
+      width: 60%; } }
   #search p {
     color: #DDDDDD;
     font-size: 12px;
     border: solid #333333 3px;
-    padding: 0 5px;
+    padding: 0 7px;
     margin: 0;
     background-color: #333333;
     width: 90%; }
+    @media (min-width: 612px) {
+      #search p {
+        width: 60%;
+        float: left;
+        clear: left; } }
   #search input {
+    float: left;
+    clear: left;
     border: solid #DDDDDD 5px;
     padding: 5px;
     margin: 0;
     background-color: #DDDDDD;
-    font-size: 24px;
+    font-size: 18px;
     width: 90%; }
+    @media (min-width: 612px) {
+      #search input {
+        font-size: 24px; } }
 
 #moviesearch {
   background: url("../img/search.png") no-repeat right bottom;
@@ -73,6 +124,12 @@ footer {
   font-size: 12px;
   padding: 10px;
   margin: 10px 5px; }
+  @media (min-width: 400px) {
+    footer {
+      font-size: 16px; } }
+  @media (min-width: 612px) {
+    footer {
+      font-size: 20px; } }
   footer p {
     padding: 0;
     margin: 0; }
@@ -80,7 +137,7 @@ footer {
     display: inline; }
 
 #results {
-  margin: 8px 0;
+  margin: 8px auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start; }
@@ -89,22 +146,42 @@ footer {
     background-color: #333333;
     display: flex;
     align-items: center; }
+    @media (min-width: 612px) {
+      #results figure {
+        width: 25%;
+        display: block;
+        margin-left: 38px; } }
     #results figure img {
       width: 25%; }
+      @media (min-width: 612px) {
+        #results figure img {
+          width: 100%;
+          margin-left: auto;
+          margin-right: auto; } }
     #results figure figcaption {
       color: orange;
       font-size: 14px;
       background-color: #333333; }
+      @media (min-width: 400px) {
+        #results figure figcaption {
+          font-size: 16px; } }
   #results aside {
     width: 100%;
     margin: 4px 0; }
+    @media (min-width: 612px) {
+      #results aside {
+        font-size: 20px; } }
     #results aside h1 {
       color: #DDDDDD;
       margin: 0;
       border: solid #333333 5px;
-      padding: 0 0 0 38px;
+      padding: 0 0 0 7px;
       background-color: #333333;
-      width: 90%; }
+      width: 100%; }
+      @media (min-width: 612px) {
+        #results aside h1 {
+          width: 40%;
+          margin-left: 38px; } }
 
 #more {
   width: 90%;

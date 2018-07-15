@@ -1,6 +1,11 @@
 let imagePrefix = 'https://image.tmdb.org/t/p/original/';
 //noting the search input field for later
-let search = document.querySelector('#moviesearch')
+let elSearchInput = document.querySelector('#moviesearch');
+let elSearch = document.querySelector('#search');
+let elHamburger = document.querySelector('#hamburger');
+let elMenuX = document.querySelector('#close');
+let elLilMenu = document.querySelector('#lilmenu');
+let elLogo = document.querySelector('#logo');
 
 
 
@@ -62,9 +67,9 @@ function buildMovies(responseObject, searched) {
 
 }
 
-search.addEventListener('keyup', function (e) {
+elSearchInput.addEventListener('keyup', function (e) {
     if (e.keyCode === 13) {
-        searchMovies(search.value);
+        searchMovies(elSearchInput.value);
     }
 });
 
@@ -74,6 +79,36 @@ function noResults(searched) {
     document.querySelector('section#results').innerHTML = '<aside><h1>Your query for ' + searched + ' returned zero results.</h1></aside>';
 
 }
+
+//This section will control the visibility of the mobile menu
+
+elHamburger.addEventListener('click', function(){
+    openMobileMenu();
+},false);
+
+
+elMenuX.addEventListener('click', function(){
+    closeMobileMenu();
+},false);
+
+
+
+function openMobileMenu(){
+    elLilMenu.style.display = "block";
+    elHamburger.style.display = "none";
+    elMenuX.style.display = "block";
+    elSearch.style.display = "none";
+    elLogo.style.display = "none";
+}
+
+function closeMobileMenu(){
+    elLilMenu.style.display = "none";
+    elHamburger.style.display = "block";
+    elMenuX.style.display = "none";
+    elSearch.style.display = "block";
+    elLogo.style.display = "block";
+
+}
+
 //Just to put something interesting on the page when it loads
 searchMovies('Fight Club');
-
